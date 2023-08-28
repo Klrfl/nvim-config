@@ -42,8 +42,15 @@ lspconfig.lua_ls.setup {
   }
 }
 
-lspconfig.cssls.setup{}
-lspconfig.html.setup{}
+lspconfig.cssls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
@@ -52,4 +59,12 @@ lspconfig.tsserver.setup {
   -- run lsp for javascript in any directory
 }
 
-lspconfig.astro.setup{}
+lspconfig.astro.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+lspconfig.volar.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}

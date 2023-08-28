@@ -4,7 +4,7 @@ bufferline.setup {
   highlights = require("catppuccin.groups.integrations.bufferline").get(),
   options = {
     mode = "tabs", -- set to "tabs" to only show tabpages instead
-    style_preset = bufferline.style_preset.default, -- or bufferline.style_preset.minimal,
+    themable = true,
     close_command = "bdelete! %d",       -- can be a string | function, | false see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function | false, see "Mouse actions"
     left_mouse_command = "buffer %d",    -- can be a string | function, | false see "Mouse actions"
@@ -23,6 +23,14 @@ bufferline.setup {
     truncate_names = true, -- whether or not tab names should be truncated
     tab_size = 20,
     diagnostics = "nvim_lsp",
+    offsets = {
+        {
+          filetype = "NvimTree",
+          text = "Si paling hengker",
+          text_align = "left",
+          separator = false,
+        }
+    },
     color_icons = true, -- whether or not to add the filetype icon highlights
     show_buffer_icons =  true, -- disable filetype icons for buffers
     show_buffer_close_icons = true,
