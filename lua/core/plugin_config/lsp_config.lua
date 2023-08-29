@@ -1,7 +1,8 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = {"lua_ls"}
+  ensure_installed = {"lua_ls", "html", "cssls", "astro", "volar", "tsserver"}
 })
+
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 
