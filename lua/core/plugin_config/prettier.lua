@@ -1,0 +1,21 @@
+require("prettier").setup({
+  cli_options = {
+    print_width = 80,
+    tab_width = 2,
+    use_tabs = false,
+    single_quote = false,
+    quote_props = "as-needed",
+    jsx_single_quote = false,
+    trailing_comma = "es5",
+    bracket_spacing = true,
+    bracket_same_line = true,
+    arrow_parens = "always",
+    embedded_language_formatting = "auto",
+    end_of_line = "lf",
+    html_whitespace_sensitivity = "css",
+    prose_wrap = "preserve",
+    semi = true,
+    single_attribute_per_line = false,
+    vue_indent_script_and_style = false,
+  },
+})

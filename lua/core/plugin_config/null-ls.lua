@@ -16,7 +16,7 @@ local on_attach = function(client, bufnr)
       buffer = bufnr,
       group = group,
       callback = function()
-        vim.lsp.buf.format({ bufnr = bufnr, async = async })
+        vim.lsp.buf.format({ bufnr = bufnr, async = async, filter = function(c) return c.name == "null-ls" end })
       end,
       desc = "[lsp] format on save",
     })
@@ -30,11 +30,11 @@ local on_attach = function(client, bufnr)
 end
 
 local sources = {
-  null_ls.builtins.formatting.prettierd.with({
+  null_ls.builtins.formatting.prettier.with({
     extra_filetypes = { "astro" },
   }),
 
-  null_ls.builtins.formatting.prettierd,
+  null_ls.builtins.formatting.prettier,
   null_ls.builtins.diagnostics.eslint_d,
   null_ls.builtins.completion.luasnip,
 }

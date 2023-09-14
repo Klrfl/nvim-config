@@ -12,6 +12,7 @@ require("core.plugin_config.bufferline")
 -- formatter, lsp
 require("core.plugin_config.null-ls")
 require("core.plugin_config.emmet")
+require("core.plugin_config.prettier")
 require("core.plugin_config.ts-autotag")
 require("core.plugin_config.lsp_config")
 require("core.plugin_config.completions")

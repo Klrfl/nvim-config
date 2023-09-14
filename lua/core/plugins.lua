@@ -40,7 +40,10 @@ return require('packer').startup(function(use)
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
+    'jose-elias-alvarez/null-ls.nvim',
+    'MunifTanjim/prettier.nvim'
   }
+
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'L3MON4D3/LuaSnip'
@@ -55,7 +58,6 @@ return require('packer').startup(function(use)
   }
   use 'windwp/nvim-ts-autotag'
 
-  use 'jose-elias-alvarez/null-ls.nvim'
   use { 'numToStr/Comment.nvim' }
 
   -- markdown preview
