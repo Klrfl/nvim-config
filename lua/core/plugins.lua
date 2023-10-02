@@ -35,7 +35,7 @@ return require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' }
   }
 
-  -- LSP, completion, formatter
+  -- LSP, formatter
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -44,12 +44,16 @@ return require('packer').startup(function(use)
     'MunifTanjim/prettier.nvim'
   }
 
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
-  use "rafamadriz/friendly-snippets"
-  use "glepnir/lspsaga.nvim"
+  -- completion
+  use {
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'L3MON4D3/LuaSnip',
+    'onsails/lspkind.nvim',
+    'saadparwaiz1/cmp_luasnip',
+    "rafamadriz/friendly-snippets",
+    "glepnir/lspsaga.nvim",
+  }
 
   --autopair and autotag for web dev
   use {
@@ -58,13 +62,12 @@ return require('packer').startup(function(use)
   }
   use 'windwp/nvim-ts-autotag'
 
-  use { 'numToStr/Comment.nvim' }
-
-  -- markdown preview
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+     require("Comment").setup()
+    end
+  }
 
   -- git highlighting
   use 'lewis6991/gitsigns.nvim'

@@ -7,7 +7,13 @@ local async = event == "BufWritePost"
 local on_attach = function(client, bufnr)
   if client.supports_method("textDocument/formatting") then
     vim.keymap.set("n", "<Leader>f", function()
-      vim.lsp.buf.format({ bufnr = bufnr, async = async, filter = function(c) return c.name == "null-ls" end })
+      vim.lsp.buf.format({
+        bufnr = bufnr,
+        async = async,
+        filter = function(c)
+          return c.name == "null-ls"
+        end
+      })
     end, { buffer = bufnr, desc = "[lsp] format" })
 
     -- format on save
@@ -16,7 +22,13 @@ local on_attach = function(client, bufnr)
       buffer = bufnr,
       group = group,
       callback = function()
-        vim.lsp.buf.format({ bufnr = bufnr, async = async, filter = function(c) return c.name == "null-ls" end })
+        vim.lsp.buf.format({
+          bufnr = bufnr,
+          async = async,
+          filter = function(c)
+            return c.name == "null-ls"
+          end
+        })
       end,
       desc = "[lsp] format on save",
     })
@@ -36,7 +48,6 @@ local sources = {
 
   null_ls.builtins.formatting.prettier,
   null_ls.builtins.diagnostics.eslint_d,
-  null_ls.builtins.completion.luasnip,
 }
 
 null_ls.setup({
