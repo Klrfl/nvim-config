@@ -18,7 +18,6 @@ require("core.plugin_config.lsp_config")
 require("core.plugin_config.completions")
 
 require("core.plugin_config.lspsaga")
-require("core.plugin_config.gitsigns")
 
 -- terminal
 require("core.plugin_config.toggleterm")

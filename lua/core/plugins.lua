@@ -70,7 +70,12 @@ return require('packer').startup(function(use)
   }
 
   -- git highlighting
-  use 'lewis6991/gitsigns.nvim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require("gitsigns").setup()
+    end
+  }
   use {
     "akinsho/toggleterm.nvim",
     tag = '*'
