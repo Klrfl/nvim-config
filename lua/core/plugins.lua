@@ -42,6 +42,7 @@ return require("packer").startup(function(use)
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 		"stevearc/conform.nvim",
+		"mfussenegger/nvim-lint",
 	})
 
 	-- completion
@@ -64,12 +65,7 @@ return require("packer").startup(function(use)
 	})
 	use("windwp/nvim-ts-autotag")
 
-	use({
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	})
+	use({ "numToStr/Comment.nvim" })
 
 	-- git highlighting
 	use({
@@ -91,6 +87,7 @@ return require("packer").startup(function(use)
 			require("git-conflict").setup()
 		end,
 	})
+
 	-- Atomatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
