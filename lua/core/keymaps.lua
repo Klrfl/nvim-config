@@ -4,9 +4,11 @@ local keymap = vim.keymap
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+keymap.set("n", "x", '"_x')
 
-keymap.set("n", "te", ":tabedit<CR>")
+keymap.set("n", "+", "<C-a>")
+keymap.set("n", "_", "<C-x>")
+keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 
 -- split windows
 keymap.set("n", "ss", ":split<CR><C-w>w", { silent = true })
