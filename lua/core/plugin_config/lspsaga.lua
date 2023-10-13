@@ -1,10 +1,10 @@
 local status, saga = pcall(require, "lspsaga")
 if not status then
-	return
+  return
 end
 
 saga.setup({
-	server_filetype_map = {},
+  server_filetype_map = {},
 })
 
 local opts = { noremap = true, silent = true }
