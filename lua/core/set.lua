@@ -26,8 +26,14 @@ opt.autoindent = true
 opt.smartindent = true
 opt.expandtab = true
 
+-- blink cursor
 vim.o.guicursor = table.concat({
   "n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
   "i-ci:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
   "r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100",
 }, ",")
+
+vim.o.foldenable = true
+vim.o.foldcolumn = "1"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99

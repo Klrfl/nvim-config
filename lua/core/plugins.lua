@@ -21,7 +21,7 @@ return require("packer").startup(function(use)
     requires = { "nvim-tree/nvim-web-devicons" },
   })
 
-  use("akinsho/bufferline.nvim") --tabs!!
+  use("akinsho/bufferline.nvim", { after = "catppuccin" }) --tabs!!
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
@@ -33,7 +33,7 @@ return require("packer").startup(function(use)
     "nvim-telescope/telescope.nvim",
     tag = "0.1.2",
     -- or                            , branch = '0.1.x',
-    requires = { "nvim-lua/plenary.nvim" },
+    requires = "nvim-lua/plenary.nvim",
   })
 
   -- LSP, formatter
@@ -65,6 +65,7 @@ return require("packer").startup(function(use)
   })
   use("windwp/nvim-ts-autotag")
 
+  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
   use({ "numToStr/Comment.nvim" })
 
   -- git highlighting
