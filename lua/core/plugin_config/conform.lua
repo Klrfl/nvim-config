@@ -8,6 +8,7 @@ require("conform").setup({
     vue = { "prettier" },
     astro = { "prettier" },
     javascript = { "prettier" },
+    json = { "prettier" },
   },
 
   format_on_save = {
