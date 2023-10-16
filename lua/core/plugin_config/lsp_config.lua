@@ -6,6 +6,10 @@ require("mason-lspconfig").setup({
 -- Setup language servers.
 local lspconfig = require("lspconfig")
 
+-- nice border for hovering. thanks to https://www.reddit.com/r/neovim/comments/wscfar/how_to_get_bordered_ui_for_hover_actions_in/
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
@@ -21,8 +25,6 @@ local on_attach = function(_, _)
   vim.keymap.set("n", "K", vim.lsp.buf.hover)
   vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
   vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
-  vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder)
-  vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder)
   vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition)
   vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename)
   vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action)
