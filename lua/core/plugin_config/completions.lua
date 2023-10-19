@@ -19,8 +19,12 @@ cmp.setup({
   },
 
   window = {
-    documentation = cmp.config.window.bordered(),
-    completion = cmp.config.window.bordered(),
+    documentation = {
+      border = "rounded",
+    },
+    completion = {
+      border = "rounded",
+    },
   },
 
   sources = cmp.config.sources({
