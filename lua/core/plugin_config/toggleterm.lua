@@ -1,7 +1,6 @@
 require("toggleterm").setup({
   shade_terminals = true,
   persist_mode = true,
-  direction = "float",
 })
 
 function _G.set_terminal_keymaps()
