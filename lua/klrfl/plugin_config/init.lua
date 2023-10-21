@@ -1,25 +1,30 @@
 --theme
-require("core.plugin_config.catppuccin")
+require("klrfl.plugin_config.catppuccin")
 
-require("core.plugin_config.lualine")
-require("core.plugin_config.nvim-tree")
+require("klrfl.plugin_config.lualine")
+require("klrfl.plugin_config.nvim-tree")
 
-require("core.plugin_config.telescope")
-require("core.plugin_config.treesitter")
+require("klrfl.plugin_config.telescope")
+require("klrfl.plugin_config.treesitter")
 
-require("core.plugin_config.bufferline")
+require("klrfl.plugin_config.bufferline")
 
 -- formatter, lsp
-require("core.plugin_config.conform")
-require("core.plugin_config.emmet")
-require("core.plugin_config.ts-autotag")
-require("core.plugin_config.lsp_config")
-require("core.plugin_config.completions")
+require("klrfl.plugin_config.nvim-lint")
+require("klrfl.plugin_config.conform")
+require("klrfl.plugin_config.emmet")
+require("klrfl.plugin_config.ts-autotag")
+require("klrfl.plugin_config.lsp_config")
+require("klrfl.plugin_config.lspsaga")
+require("klrfl.plugin_config.completions")
 
-require("core.plugin_config.lspsaga")
+require("klrfl.plugin_config.gitsigns")
+
+require("klrfl.plugin_config.ufo")
 
 -- terminal
-require("core.plugin_config.toggleterm")
+require("klrfl.plugin_config.toggleterm")
 
 --comments
-require("core.plugin_config.comment")
+require("klrfl.plugin_config.comment")
+
