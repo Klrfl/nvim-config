@@ -26,7 +26,6 @@ local on_attach = function(_, _)
   keymap.set("n", "gi", lsp.buf.implementation)
   keymap.set("n", "<C-k>", lsp.buf.signature_help)
   keymap.set("n", "<space>D", lsp.buf.type_definition)
-  keymap.set({ "n", "v" }, "<space>ca", lsp.buf.code_action)
   keymap.set("n", "gr", lsp.buf.references)
 end
 
