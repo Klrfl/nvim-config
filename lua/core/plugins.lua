@@ -67,19 +67,12 @@ return require("packer").startup(function(use)
 
   use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
   use({ "numToStr/Comment.nvim" })
-
-  -- git highlighting
-  use({
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end,
-  })
-
   use({
     "akinsho/toggleterm.nvim",
     tag = "*",
   })
+
+  use("lewis6991/gitsigns.nvim")
 
   use({
     "akinsho/git-conflict.nvim",
