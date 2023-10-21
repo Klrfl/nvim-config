@@ -5,11 +5,7 @@ require("lualine").setup({
   },
 
   sections = {
-    lualine_c = {
-      {
-        "filename",
-        file_status = true,
-      },
-    },
+    lualine_c = { "filename", "selectioncount" },
+    lualine_x = { "fileformat", "filetype" },
   },
 })
