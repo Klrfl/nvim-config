@@ -4,6 +4,13 @@ if not status then
 end
 
 conform.setup({
+  formatters = {
+    astro_fmt = {
+      command = "prettier",
+      args = { "--plugin", "prettier-plugin-astro", "$FILENAME" },
+    },
+  },
+
   formatters_by_ft = {
     lua = { "stylua" },
     json = { "prettier" },
@@ -12,11 +19,11 @@ conform.setup({
     css = { "prettier" },
     javascript = { "prettier" },
     vue = { "prettier" },
-    astro = { "prettier" },
+    astro = { "astro_fmt" },
   },
 
   format_on_save = {
-    timeout_ms = 500,
+    timeout_ms = 1000,
     lsp_fallback = true,
   },
 })
