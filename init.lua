@@ -1,4 +1,4 @@
-require("core.set")
-require("core.keymaps")
-require("core.plugins")
-require("core.plugin_config")
+require("klrfl.set")
+require("klrfl.keymaps")
+require("klrfl.plugins")
+require("klrfl.plugin_config")
