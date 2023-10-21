@@ -1,21 +1,18 @@
-require("conform").setup({
+local status, conform = pcall(require, "conform")
+if not status then
+  return
+end
+
+conform.setup({
   formatters_by_ft = {
     lua = { "stylua" },
+    json = { "prettier" },
 
-    formatters = {
-      astro_fmt = {
-        command = "prettier",
-        args = { "." },
-      },
-    },
-
-    -- Use a sub-list to run only the first available formatter
     html = { "prettier" },
     css = { "prettier" },
-    vue = { "prettier" },
-    astro = { "astro_fmt" },
     javascript = { "prettier" },
-    json = { "prettier" },
+    vue = { "prettier" },
+    astro = { "prettier" },
   },
 
   format_on_save = {
