@@ -15,17 +15,16 @@ keymap.set("n", "ss", ":split<CR><C-w>w", { silent = true })
 keymap.set("n", "sv", ":vsplit<CR><C-w>w", { silent = true })
 
 -- windows
-keymap.set("n", "<Space>", "<C-w>w")
 keymap.set("", "s<left>", "<C-w>h")
 keymap.set("", "s<down>", "<C-w>j")
 keymap.set("", "s<up>", "<C-w>k")
 keymap.set("", "s<right>", "<C-w>l")
 
 -- resize window
-keymap.set("n", "<C-w><left>", "<C-w><")
-keymap.set("n", "<C-w><right>", "<C-w>>")
-keymap.set("n", "<C-w><up>", "<C-w>+")
-keymap.set("n", "<C-w><down>", "<C-w>-")
+keymap.set("n", "<C-w><left>", ":vertical resize -2<CR>")
+keymap.set("n", "<C-w><right>", ":vertical resize +2<CR>")
+keymap.set("n", "<C-w><up>", ":resize -2<CR>")
+keymap.set("n", "<C-w><down>", ":resize +2<CR>")
 
 -- fast navigation
 keymap.set("n", "<down>", "}")
@@ -33,3 +32,4 @@ keymap.set("n", "<up>", "{")
 
 keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set("n", "<C-s>", ":w<CR>")
+keymap.set("n", "<C-z>", "u")
