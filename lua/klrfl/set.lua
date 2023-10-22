@@ -34,6 +34,7 @@ vim.o.guicursor = table.concat({
 }, ",")
 
 vim.o.foldenable = true
-vim.o.foldcolumn = "1"
+vim.o.foldcolumn = "5"
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]

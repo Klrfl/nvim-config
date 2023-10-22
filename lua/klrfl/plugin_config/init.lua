@@ -27,4 +27,3 @@ require("klrfl.plugin_config.toggleterm")
 
 --comments
 require("klrfl.plugin_config.comment")
-
