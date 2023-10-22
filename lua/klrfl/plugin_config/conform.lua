@@ -20,6 +20,7 @@ conform.setup({
     javascript = { "prettier" },
     vue = { "prettier" },
     astro = { "astro_fmt" },
+    ["_"] = { "prettier" },
   },
 
   format_on_save = {
