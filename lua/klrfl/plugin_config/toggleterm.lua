@@ -1,4 +1,5 @@
 require("toggleterm").setup({
+  autochdir = true,
   shade_terminals = true,
   persist_mode = true,
 })
