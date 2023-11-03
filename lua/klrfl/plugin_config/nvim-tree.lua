@@ -17,4 +17,4 @@ end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
-vim.keymap.set("n", "<c-b>", ":NvimTreeFindFileToggle<CR>")
+vim.keymap.set("n", "<leader>b", ":NvimTreeFindFileToggle<CR>")

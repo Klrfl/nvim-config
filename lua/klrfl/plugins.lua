@@ -72,13 +72,21 @@ return require("packer").startup(function(use)
     tag = "*",
   })
 
-  use("lewis6991/gitsigns.nvim")
+  use({
+    "lewis6991/gitsigns.nvim",
+    {
+      "akinsho/git-conflict.nvim",
+      tag = "*",
+      config = function()
+        require("git-conflict").setup()
+      end,
+    },
+  })
 
   use({
-    "akinsho/git-conflict.nvim",
-    tag = "*",
+    "karb94/neoscroll.nvim",
     config = function()
-      require("git-conflict").setup()
+      require("neoscroll").setup()
     end,
   })
 
