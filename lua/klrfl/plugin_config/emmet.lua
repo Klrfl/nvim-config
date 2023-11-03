@@ -6,17 +6,16 @@ lspconfig.emmet_ls.setup({
   -- on_attach = on_attach,
   capabilities = capabilities,
   filetypes = {
-    "css",
-    "eruby",
     "html",
-    "javascript",
-    "javascriptreact",
+    "css",
     "sass",
     "scss",
-    "svelte",
-    "pug",
+    "javascript",
+    "javascriptreact",
     "typescriptreact",
+    "svelte",
     "vue",
+    "astro",
   },
   init_options = {
     html = {
