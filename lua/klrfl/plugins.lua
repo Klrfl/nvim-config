@@ -1,98 +1,89 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-    vim.cmd([[packadd packer.nvim]])
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
+require("lazy").setup({
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, -- theme
+  "nvim-tree/nvim-tree.lua", -- file explorer
+  {
+    "nvim-lualine/lualine.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+  }, -- status line
 
-return require("packer").startup(function(use)
-  use("wbthomason/packer.nvim")
-
-  use({ "catppuccin/nvim", as = "catppuccin" }) -- theme
-  use("nvim-tree/nvim-tree.lua") -- file explorer
-  use({
-    "nvim-lualine/lualine.nvim", -- status line
-    requires = { "nvim-tree/nvim-web-devicons" },
-  })
-
-  use("akinsho/bufferline.nvim", { after = "catppuccin" }) --tabs!!
-  use({
+  "akinsho/bufferline.nvim", --tabs!!
+  {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  })
-  use("mg979/vim-visual-multi") -- multicursor
+    build = ":TSUpdate",
+  },
+  { "mg979/vim-visual-multi" }, -- multicursor
 
   -- fuzzy finder
-  use({
+  {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.2",
+    version = "0.1.2",
     -- or                            , branch = '0.1.x',
-    requires = "nvim-lua/plenary.nvim",
-  })
+    dependencies = "nvim-lua/plenary.nvim",
+  },
 
   -- LSP, formatter
-  use({
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-    "stevearc/conform.nvim",
-    "mfussenegger/nvim-lint",
-  })
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
+  "stevearc/conform.nvim",
+  "mfussenegger/nvim-lint",
 
   -- completion
-  use({
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
-    "L3MON4D3/LuaSnip",
-    "onsails/lspkind.nvim",
-    "saadparwaiz1/cmp_luasnip",
-    "rafamadriz/friendly-snippets",
-    "glepnir/lspsaga.nvim",
-  })
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-nvim-lsp",
+  "L3MON4D3/LuaSnip",
+  "onsails/lspkind.nvim",
+  "saadparwaiz1/cmp_luasnip",
+  "rafamadriz/friendly-snippets",
+  "glepnir/lspsaga.nvim",
 
   --autopair and autotag for web dev
-  use({
+  {
     "windwp/nvim-autopairs",
     config = function()
       require("nvim-autopairs").setup({})
     end,
-  })
-  use("windwp/nvim-ts-autotag")
+  },
+  "windwp/nvim-ts-autotag",
 
-  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
-  use({ "numToStr/Comment.nvim" })
-  use({
+  { "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
+  "numToStr/Comment.nvim",
+  {
     "akinsho/toggleterm.nvim",
-    tag = "*",
-  })
+    version = "*",
+  },
 
-  use({
-    "lewis6991/gitsigns.nvim",
-    {
-      "akinsho/git-conflict.nvim",
-      tag = "*",
-      config = function()
-        require("git-conflict").setup()
-      end,
-    },
-  })
+  "lewis6991/gitsigns.nvim",
+  {
+    "akinsho/git-conflict.nvim",
+    version = "*",
+    config = function()
+      require("git-conflict").setup()
+    end,
+  },
 
-  use({
+  {
     "karb94/neoscroll.nvim",
     config = function()
       require("neoscroll").setup()
     end,
-  })
-
-  -- Atomatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require("packer").sync()
-  end
-end)
+  },
+}, {
+  ui = {
+    border = "single",
+  },
+})
