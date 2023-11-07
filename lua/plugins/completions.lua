@@ -1,6 +1,14 @@
 return {
-  -- completion
+  -- completion and lsp stuff
   "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    "onsails/lspkind.nvim",
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
+    "rafamadriz/friendly-snippets",
+  },
   config = function()
     local cmp = require("cmp")
     local lspkind = require("lspkind")

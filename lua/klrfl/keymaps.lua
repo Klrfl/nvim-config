@@ -32,4 +32,4 @@ keymap.set("n", "<up>", "{")
 
 keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set("n", "<C-s>", ":w<CR>")
-keymap.set("n", "<C-z>", "u")
+keymap.set("n", "<C-z>", ":lua print('bruh did you mean to press u?')<CR>")

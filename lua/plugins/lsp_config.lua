@@ -1,5 +1,9 @@
 return {
   "williamboman/mason.nvim",
+  dependencies = {
+    "neovim/nvim-lspconfig",
+    "williamboman/mason-lspconfig.nvim",
+  },
   config = function()
     require("mason").setup()
     require("mason-lspconfig").setup({
@@ -71,6 +75,30 @@ return {
     lspconfig.volar.setup({
       on_attach = on_attach,
       capabilities = capabilities,
+    })
+
+    lspconfig.emmet_ls.setup({
+      capabilities = capabilities,
+      filetypes = {
+        "html",
+        "css",
+        "sass",
+        "scss",
+        "javascript",
+        "javascriptreact",
+        "typescriptreact",
+        "svelte",
+        "vue",
+        "astro",
+      },
+      init_options = {
+        html = {
+          options = {
+            -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+            ["bem.enabled"] = true,
+          },
+        },
+      },
     })
   end,
 }

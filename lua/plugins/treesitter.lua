@@ -1,9 +1,9 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  event = "VimEnter",
   config = function()
     require("nvim-treesitter.configs").setup({
-      -- A list of parser names, or "all" (the five listed parsers should always be installed)
       ensure_installed = {
         "html",
         "css",
@@ -19,7 +19,8 @@ return {
         "markdown",
         "markdown_inline",
       },
-      auto_tag = {
+
+      autotag = {
         enable = true,
       },
 
@@ -36,7 +37,6 @@ return {
 
       indent = {
         enable = true,
-        disable = {},
       },
     })
   end,
