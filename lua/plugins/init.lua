@@ -18,4 +18,7 @@ return {
     "karb94/neoscroll.nvim",
     config = true,
   },
+  {
+    "ThePrimeagen/vim-be-good",
+  },
 }
