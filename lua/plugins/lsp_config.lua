@@ -23,14 +23,13 @@ return {
 
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
     keymap.set("n", "<space>e", vim.diagnostic.open_float)
-    keymap.set("n", "[d", vim.diagnostic.goto_prev)
-    keymap.set("n", "]d", vim.diagnostic.goto_next)
     keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
     local hover_opts = {
       border = "rounded",
       max_width = 80,
     }
+
     -- nice border for hovering. thanks to https://www.reddit.com/r/neovim/comments/wscfar/how_to_get_bordered_ui_for_hover_actions_in/
     lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, hover_opts)
     lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, hover_opts)
@@ -39,7 +38,6 @@ return {
     -- after the language server attaches to the current buffer
     local on_attach = function(_, _)
       keymap.set("n", "gD", lsp.buf.declaration)
-      keymap.set("n", "gd", lsp.buf.definition)
       keymap.set("n", "K", lsp.buf.hover)
       keymap.set("n", "gi", lsp.buf.implementation)
       keymap.set("n", "<C-k>", lsp.buf.signature_help)
