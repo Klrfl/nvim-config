@@ -19,7 +19,7 @@ if not vim.g.vscode then
 
   require("lazy").setup("plugins", {
     ui = {
-      border = "single",
+      border = "rounded",
     },
   })
 end

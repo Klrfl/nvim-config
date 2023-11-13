@@ -5,7 +5,14 @@ return {
     "williamboman/mason-lspconfig.nvim",
   },
   config = function()
-    require("mason").setup()
+    require("mason").setup({
+      ui = {
+        border = "rounded",
+        width = 0.7,
+        height = 0.8,
+      },
+    })
+
     require("mason-lspconfig").setup({
       ensure_installed = { "lua_ls", "html", "cssls", "astro", "volar", "tsserver" },
     })
@@ -20,9 +27,13 @@ return {
     keymap.set("n", "]d", vim.diagnostic.goto_next)
     keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
+    local hover_opts = {
+      border = "rounded",
+      max_width = 80,
+    }
     -- nice border for hovering. thanks to https://www.reddit.com/r/neovim/comments/wscfar/how_to_get_bordered_ui_for_hover_actions_in/
-    lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, { border = "rounded" })
-    lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, { border = "rounded" })
+    lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, hover_opts)
+    lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, hover_opts)
 
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer

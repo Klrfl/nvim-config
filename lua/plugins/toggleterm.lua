@@ -25,13 +25,13 @@ return {
       cmd = "lazygit",
       direction = "float",
       float_opts = {
-        border = "single",
+        border = "rounded",
       },
 
       -- function to run on opening the term
       on_open = function(term)
         vim.cmd("startinsert!")
-        vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+        vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", ":close<CR>", { noremap = true, silent = true })
       end,
 
       -- function to run on closing the terminal
@@ -44,6 +44,6 @@ return {
       lazygit:toggle()
     end
 
-    vim.keymap.set("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>g", ":lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
   end,
 }
