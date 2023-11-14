@@ -1,6 +1,6 @@
 -- if you're looking for the rest of the plugins, they have their own files!
 return {
-  "mg979/vim-visual-multi", -- multicursor
+  { "mg979/vim-visual-multi", event = "InsertEnter" }, -- multicursor
 
   --autopair and autotag for web dev
   {
@@ -16,9 +16,11 @@ return {
   },
   {
     "karb94/neoscroll.nvim",
+    event = "VeryLazy",
     config = true,
   },
   {
     "ThePrimeagen/vim-be-good",
+    cmd = "VimBeGood",
   },
 }

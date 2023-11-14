@@ -1,6 +1,9 @@
 return {
   "akinsho/toggleterm.nvim",
   version = "*",
+  keys = {
+    { "<C-j>", ":ToggleTerm<CR>", desc = "open terminal via ToggleTerm" },
+  },
   config = function()
     require("toggleterm").setup({
       autochdir = true,
@@ -13,8 +16,6 @@ return {
       vim.keymap.set("t", "<C-J>", [[<C-\><C-n>]], opts)
       vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
     end
-
-    vim.keymap.set("n", "<C-J>", ":ToggleTerm<CR>")
 
     -- toggle terminal
     vim.cmd("autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()")
