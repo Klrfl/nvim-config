@@ -30,6 +30,6 @@ keymap.set("n", "<C-w><down>", ":resize +2<CR>")
 keymap.set("n", "<down>", "}")
 keymap.set("n", "<up>", "{")
 
-keymap.set("n", "<C-a>", "gg<S-v>G")
+keymap.set("n", "<C-a>", "ggVG")
 keymap.set("n", "<C-s>", ":w<CR>")
 keymap.set("n", "<C-z>", ":lua print('bruh did you mean to press u?')<CR>")

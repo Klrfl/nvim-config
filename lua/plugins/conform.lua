@@ -3,13 +3,6 @@ return {
   event = { "BufWritePre" },
   cmd = { "ConformInfo" },
   opts = {
-    formatters = {
-      astro_fmt = {
-        command = "prettier",
-        args = { "--plugin", "prettier-plugin-astro", "$FILENAME" },
-      },
-    },
-
     formatters_by_ft = {
       lua = { "stylua" },
       json = { "prettier" },
@@ -18,7 +11,7 @@ return {
       css = { "prettier" },
       javascript = { "prettier" },
       vue = { "prettier" },
-      astro = { "astro_fmt" },
+      astro = { "prettier" },
       ["_"] = { "prettier" },
     },
 
