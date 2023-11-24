@@ -32,9 +32,3 @@ vim.o.guicursor = table.concat({
   "i-ci:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
   "r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100",
 }, ",")
-
-vim.o.foldenable = true
-vim.o.foldcolumn = "5"
-vim.o.foldlevel = 99
-vim.o.foldlevelstart = 99
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
