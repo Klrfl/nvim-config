@@ -22,4 +22,6 @@ if not vim.g.vscode then
       border = "rounded",
     },
   })
+
+  vim.notify = require("notify")
 end

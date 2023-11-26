@@ -1,5 +1,5 @@
 return {
-  "glepnir/lspsaga.nvim",
+  "nvimdev/lspsaga.nvim",
   event = "BufEnter",
   config = function()
     local saga = require("lspsaga")
