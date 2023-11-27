@@ -23,9 +23,12 @@ return {
     config = true,
   },
   {
-    "karb94/neoscroll.nvim",
-    event = "VeryLazy",
-    config = true,
+    "declancm/cinnamon.nvim",
+    event = "BufEnter",
+    opts = {
+      extra_keymaps = true,
+      extended_keymaps = true,
+    },
   },
   {
     "ThePrimeagen/vim-be-good",
