@@ -41,6 +41,7 @@ return {
       keymap.set("n", "gD", lsp.buf.declaration)
       keymap.set("n", "K", lsp.buf.hover)
       keymap.set("n", "gi", lsp.buf.implementation)
+      keymap.set("n", "gd", lsp.buf.definition)
       keymap.set("n", "<C-k>", lsp.buf.signature_help)
       keymap.set("n", "<space>D", lsp.buf.type_definition)
       keymap.set("n", "gr", lsp.buf.references)

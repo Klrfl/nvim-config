@@ -20,7 +20,6 @@ return {
     keymap.set("n", "[d", ":Lspsaga diagnostic_jump_next<CR>", opts)
     keymap.set("n", "]d", ":Lspsaga diagnostic_jump_prev<CR>", opts)
     keymap.set("n", "<F2>", ":Lspsaga rename<CR>", opts)
-    keymap.set("n", "gd", ":Lspsaga goto_definition<CR>", opts)
     keymap.set("n", "<leader>ca", ":Lspsaga code_action<CR>", opts)
   end,
 }
