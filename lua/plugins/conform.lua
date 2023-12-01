@@ -12,7 +12,6 @@ return {
       javascript = { "prettier" },
       vue = { "prettier" },
       astro = { "prettier" },
-      ["_"] = { "prettier" },
     },
 
     format_on_save = {
