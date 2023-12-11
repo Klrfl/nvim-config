@@ -10,8 +10,12 @@ return {
       html = { "prettier" },
       css = { "prettier" },
       javascript = { "prettier" },
+      typescript = { "prettier" },
       vue = { "prettier" },
       astro = { "prettier" },
+      javascriptreact = { "prettier" },
+      typescriptreact = { "prettier" },
+      ["_"] = { "prettier" },
     },
 
     format_on_save = {

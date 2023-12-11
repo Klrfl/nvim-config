@@ -60,5 +60,8 @@ return {
         "Filipi 1:3",
       },
     },
+    hide = {
+      statusline = false,
+    },
   },
 }
