@@ -15,7 +15,7 @@ return {
     })
 
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls", "html", "cssls", "astro", "volar", "tsserver" },
+      ensure_installed = { "lua_ls", "html", "cssls", "tsserver", "astro", "volar", "emmet_ls", "tailwindcss" },
     })
 
     -- Global mappings.
@@ -51,6 +51,7 @@ return {
     local lspconfig = require("lspconfig")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+    -- special server with special config
     lspconfig.lua_ls.setup({
       on_attach = on_attach,
       capabilities = capabilities,
@@ -63,31 +64,6 @@ return {
       },
     })
 
-    lspconfig.cssls.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-
-    lspconfig.html.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-
-    lspconfig.tsserver.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-
-    lspconfig.astro.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-
-    lspconfig.volar.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-
     lspconfig.emmet_ls.setup({
       capabilities = capabilities,
       filetypes = {
@@ -96,9 +72,9 @@ return {
         "sass",
         "scss",
         "javascript",
+        "typescript",
         "javascriptreact",
         "typescriptreact",
-        "svelte",
         "vue",
         "astro",
       },
@@ -111,5 +87,14 @@ return {
         },
       },
     })
+
+    local servers = { "html", "cssls", "tsserver", "astro", "volar", "tailwindcss" }
+
+    for _, server in pairs(servers) do
+      lspconfig[server].setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+    end
   end,
 }
