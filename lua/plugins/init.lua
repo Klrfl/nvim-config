@@ -5,6 +5,8 @@ return {
     event = "VeryLazy",
     opts = {
       background_colour = "#000000",
+      max_width = 60,
+      render = "wrapped-compact",
     },
   },
   { "mg979/vim-visual-multi", event = "InsertEnter" }, -- multicursor
