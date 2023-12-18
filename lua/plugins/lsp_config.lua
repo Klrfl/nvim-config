@@ -15,16 +15,22 @@ return {
     })
 
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls", "html", "cssls", "tsserver", "astro", "volar", "emmet_ls", "tailwindcss" },
+      ensure_installed = {
+        "lua_ls",
+        "html",
+        "cssls",
+        "tsserver",
+        "astro",
+        "volar",
+        "emmet_ls",
+        "marksman",
+        "tailwindcss",
+      },
     })
 
     -- Global mappings.
     local keymap = vim.keymap
     local lsp = vim.lsp
-
-    -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-    keymap.set("n", "<space>e", vim.diagnostic.open_float)
-    keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
     local hover_opts = {
       border = "rounded",
@@ -38,6 +44,7 @@ return {
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer
     local on_attach = function(_, _)
+      local opts = { noremap = true, silent = true }
       keymap.set("n", "gD", lsp.buf.declaration)
       keymap.set("n", "K", lsp.buf.hover)
       keymap.set("n", "gi", lsp.buf.implementation)
@@ -45,6 +52,12 @@ return {
       keymap.set("n", "<C-k>", lsp.buf.signature_help)
       keymap.set("n", "<space>D", lsp.buf.type_definition)
       keymap.set("n", "gr", lsp.buf.references)
+
+      keymap.set("n", "[d", ":Lspsaga diagnostic_jump_next<CR>", opts)
+      keymap.set("n", "]d", ":Lspsaga diagnostic_jump_prev<CR>", opts)
+      keymap.set("n", "<F2>", ":Lspsaga rename<CR>", opts)
+      keymap.set("n", "<leader>ca", ":Lspsaga code_action<CR>", opts)
+      keymap.set("n", "<leader>o", ":Lspsaga outline<CR>", opts)
     end
 
     -- Setup language servers.
@@ -88,7 +101,7 @@ return {
       },
     })
 
-    local servers = { "html", "cssls", "tsserver", "astro", "volar", "tailwindcss" }
+    local servers = { "html", "cssls", "tsserver", "astro", "volar", "tailwindcss", "marksman" }
 
     for _, server in pairs(servers) do
       lspconfig[server].setup({
