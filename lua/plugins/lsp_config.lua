@@ -16,7 +16,6 @@ return {
 
     require("mason-lspconfig").setup({
       ensure_installed = {
-        "lua_ls",
         "html",
         "cssls",
         "tsserver",
@@ -25,6 +24,8 @@ return {
         "emmet_ls",
         "marksman",
         "tailwindcss",
+        "lua_ls",
+        "gopls",
       },
     })
 
@@ -101,7 +102,7 @@ return {
       },
     })
 
-    local servers = { "html", "cssls", "tsserver", "astro", "volar", "tailwindcss", "marksman" }
+    local servers = { "html", "cssls", "tsserver", "astro", "volar", "tailwindcss", "gopls", "marksman" }
 
     for _, server in pairs(servers) do
       lspconfig[server].setup({
