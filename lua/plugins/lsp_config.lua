@@ -64,6 +64,7 @@ return {
     -- Setup language servers.
     local lspconfig = require("lspconfig")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    require("lspconfig.ui.windows").default_options.border = "rounded"
 
     -- special server with special config
     lspconfig.lua_ls.setup({
