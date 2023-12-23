@@ -30,6 +30,7 @@ return {
     opts = {
       extra_keymaps = true,
       extended_keymaps = true,
+      default_delay = 5,
     },
   },
   {
