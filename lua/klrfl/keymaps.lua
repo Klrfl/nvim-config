@@ -17,8 +17,16 @@ keymap.set("n", "sv", ":vsplit<CR><C-w>w", { silent = true })
 -- resize window
 keymap.set("n", "<C-w><left>", ":vertical resize -2<CR>")
 keymap.set("n", "<C-w><right>", ":vertical resize +2<CR>")
-keymap.set("n", "<C-w><up>", ":resize -2<CR>")
-keymap.set("n", "<C-w><down>", ":resize +2<CR>")
+keymap.set("n", "<C-w><up>", ":resize +2<CR>")
+keymap.set("n", "<C-w><down>", ":resize -2<CR>")
+
+-- tabs
+local tabopts = { silent = true }
+keymap.set("n", "te", ":tabedit<CR>", tabopts)
+keymap.set("n", "tx", ":tabclose<CR>", tabopts)
+keymap.set("n", "th", ":tabprevious<CR>", tabopts)
+keymap.set("n", "tl", ":tabnext<CR>", tabopts)
+keymap.set("n", "tls", ":tabs<CR>", tabopts)
 
 -- fast navigation
 keymap.set("n", "<down>", "}")
