@@ -9,6 +9,9 @@ local opt = vim.opt
 opt.number = true
 opt.relativenumber = true
 
+opt.ignorecase = true
+opt.smartcase = true
+
 opt.colorcolumn = "80"
 opt.termguicolors = true
 opt.backspace = "2"
