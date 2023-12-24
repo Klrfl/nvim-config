@@ -17,8 +17,8 @@ return {
           end,
         },
       },
-      lualine_c = { "filename", "selectioncount" },
-      lualine_x = { "fileformat", "filetype" },
+      lualine_c = { "filename", "filetype", "selectioncount" },
+      lualine_x = { "encoding", "fileformat" },
       lualine_z = {
         {
           "location",
@@ -28,5 +28,6 @@ return {
         },
       },
     },
+    extensions = { "nvim-tree", "toggleterm" },
   },
 } -- status line
