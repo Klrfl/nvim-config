@@ -3,10 +3,11 @@ return {
   version = "*",
   keys = {
     { "<C-j>", ":ToggleTerm<CR>", desc = "open terminal via ToggleTerm" },
-    { "<leader>g", ":lua Lazygit_toggle()<CR>", desc = "open lazygit via ToggleTerm" },
+    { "<leader>g", ":lua _lazygit_toggle()<CR>", desc = "open lazygit via ToggleTerm" },
   },
   config = function()
     require("toggleterm").setup({
+      size = 20,
       autochdir = true,
       shade_terminals = true,
       persist_mode = true,
@@ -42,7 +43,7 @@ return {
       end,
     })
 
-    function Lazygit_toggle()
+    function _lazygit_toggle()
       lazygit:toggle()
     end
   end,
