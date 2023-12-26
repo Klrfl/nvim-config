@@ -26,7 +26,6 @@ keymap.set("n", "te", ":tabedit<CR>", tabopts)
 keymap.set("n", "tx", ":tabclose<CR>", tabopts)
 keymap.set("n", "th", ":tabprevious<CR>", tabopts)
 keymap.set("n", "tl", ":tabnext<CR>", tabopts)
-keymap.set("n", "tls", ":tabs<CR>", tabopts)
 
 -- fast navigation
 keymap.set("n", "<down>", "}")
