@@ -15,6 +15,7 @@ return {
       astro = { "prettierd" },
       javascriptreact = { "prettierd" },
       typescriptreact = { "prettierd" },
+      markdown = { "prettierd" },
       ["_"] = { "prettierd" },
     },
 
