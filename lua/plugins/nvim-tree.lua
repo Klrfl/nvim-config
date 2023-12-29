@@ -1,9 +1,9 @@
 return {
   "nvim-tree/nvim-tree.lua", -- file explorer
-  lazy = false,
   keys = {
     { "<leader>b", ":NvimTreeToggle<CR>", desc = "Open NvimTree" },
   },
+  cmd = "NvimTreeToggle",
   opts = {
     view = {
       side = "right",
