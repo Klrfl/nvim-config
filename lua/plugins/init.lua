@@ -9,7 +9,6 @@ return {
       render = "wrapped-compact",
     },
   },
-  { "mg979/vim-visual-multi", event = "InsertEnter" }, -- multicursor
 
   --autopair and autotag for web dev
   {
