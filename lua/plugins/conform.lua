@@ -16,7 +16,6 @@ return {
       javascriptreact = { "prettierd" },
       typescriptreact = { "prettierd" },
       markdown = { "prettierd" },
-      ["_"] = { "prettierd" },
     },
 
     format_on_save = {
