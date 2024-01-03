@@ -15,6 +15,19 @@ return {
     local lspkind = require("lspkind")
     require("luasnip.loaders.from_vscode").lazy_load()
 
+    -- https://github.com/dpetka2001/dotfiles/blob/10d02517395783adb31bffab5447437b8f908e15/dot_config/nvim/lua/plugins/coding.lua#L47-L62
+    -- from a post in r/neovim - thanks!
+    local types = require("cmp.types")
+    local function deprioritize_snippets(entry1, entry2)
+      if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
+        return false
+      end
+
+      if entry2:get_kind() == types.lsp.CompletionItemKind.Snippet then
+        return true
+      end
+    end
+
     cmp.setup({
       mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -29,6 +42,14 @@ return {
         expand = function(args)
           require("luasnip").lsp_expand(args.body)
         end,
+      },
+
+      -- sort snippets
+      sorting = {
+        comparators = {
+          deprioritize_snippets,
+          cmp.config.compare.recently_used,
+        },
       },
 
       window = {
