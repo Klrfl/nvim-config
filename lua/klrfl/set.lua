@@ -21,7 +21,20 @@ opt.laststatus = 2
 opt.autowrite = true
 opt.cursorline = true
 opt.autoread = true
-opt.clipboard:append({ "unnamedplus" })
+
+-- sync with system clipboard on focus
+vim.api.nvim_create_autocmd({ "FocusGained" }, {
+  pattern = { "*" },
+  command = [[call setreg("@", getreg("+"))]],
+})
+
+-- sync with system clipboard on focus
+vim.api.nvim_create_autocmd({ "FocusLost" }, {
+  pattern = { "*" },
+  command = [[call setreg("+", getreg("@"))]],
+})
+opt.clipboard = ""
+
 opt.wrap = false
 
 -- spaces for tabs
