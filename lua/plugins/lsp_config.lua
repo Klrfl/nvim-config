@@ -103,7 +103,7 @@ return {
       },
     })
 
-    local servers = { "html", "cssls", "tsserver", "astro", "volar", "tailwindcss", "gopls", "marksman" }
+    local servers = { "html", "cssls", "tsserver", "astro", "volar", "tailwindcss", "gopls", "marksman", "yamlls" }
 
     for _, server in pairs(servers) do
       lspconfig[server].setup({
