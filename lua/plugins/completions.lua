@@ -48,7 +48,11 @@ return {
       sorting = {
         comparators = {
           deprioritize_snippets,
+          cmp.config.compare.locality,
           cmp.config.compare.recently_used,
+          cmp.config.compare.score,
+          cmp.config.compare.offset,
+          cmp.config.compare.order,
         },
       },
 
