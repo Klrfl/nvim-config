@@ -15,7 +15,7 @@ return {
 
     dashboard.section.header.val = vim.split(logo, "\n")
     dashboard.section.buttons.val = {
-      dashboard.button("<leader<ff", " " .. " Find file", ":Telescope find_files <CR>"),
+      dashboard.button("<leader>ff", " " .. " Find file", ":Telescope find_files <CR>"),
       dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
       dashboard.button("<leader>fg", " " .. " Find text", ":Telescope live_grep <CR>"),
       dashboard.button("<leader>b", " " .. " Explore", ":NvimTreeToggle<CR>"),
