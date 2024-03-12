@@ -22,18 +22,7 @@ opt.autowrite = true
 opt.cursorline = true
 opt.autoread = true
 
--- sync with system clipboard on focus
-vim.api.nvim_create_autocmd({ "FocusGained" }, {
-  pattern = { "*" },
-  command = [[call setreg("@", getreg("+"))]],
-})
-
--- sync with system clipboard on focus
-vim.api.nvim_create_autocmd({ "FocusLost" }, {
-  pattern = { "*" },
-  command = [[call setreg("+", getreg("@"))]],
-})
-opt.clipboard = ""
+vim.opt.clipboard = "unnamedplus"
 
 opt.wrap = false
 
