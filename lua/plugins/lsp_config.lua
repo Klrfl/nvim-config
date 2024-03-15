@@ -103,13 +103,23 @@ return {
       },
     })
 
+    -- only run tailwind lsp in tailwind projects
+    lspconfig.tailwindcss.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      root_dir = require("lspconfig.util").root_pattern(
+        "tailwind.config.js",
+        "tailwind.config.cjs",
+        "postcss.config.js"
+      ),
+    })
+
     local servers = {
       "html",
       "cssls",
       "tsserver",
       "astro",
       "volar",
-      "tailwindcss",
       "gopls",
       "marksman",
       "yamlls",
