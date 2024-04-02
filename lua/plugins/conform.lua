@@ -5,17 +5,17 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
-      json = { "prettierd" },
+      json = { "prettierd", "prettier" },
 
-      html = { "prettierd" },
-      css = { "prettierd" },
-      javascript = { "prettierd" },
-      typescript = { "prettierd" },
-      vue = { "prettierd" },
-      astro = { "prettierd" },
-      javascriptreact = { "prettierd" },
-      typescriptreact = { "prettierd" },
-      markdown = { "prettierd" },
+      html = { "prettierd", "prettier" },
+      css = { "prettierd", "prettier" },
+      javascript = { "prettierd", "prettier" },
+      typescript = { "prettierd", "prettier" },
+      vue = { "prettierd", "prettier" },
+      astro = { "prettierd", "prettier" },
+      javascriptreact = { "prettierd", "prettier" },
+      typescriptreact = { "prettierd", "prettier" },
+      markdown = { "prettierd", "prettier" },
     },
 
     format_on_save = {
