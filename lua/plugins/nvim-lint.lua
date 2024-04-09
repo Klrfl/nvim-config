@@ -6,6 +6,7 @@ return {
 
     lint.linters_by_ft = {
       javascript = { "eslint_d" },
+      typescript = { "eslint_d" },
       vue = { "eslint_d" },
       astro = { "eslint_d" },
     }
@@ -16,12 +17,16 @@ return {
       group = lint_augroup,
       callback = function()
         local function checkEslintConfigFiles()
-          local files = { ".eslintrc.cjs", ".eslintrc.json", ".eslintrc.yml", ".eslintrc.yaml" }
+          local files = require("lspconfig.util").root_pattern(
+            "eslint.config.js",
+            ".eslintrc.cjs",
+            ".eslintrc.json",
+            ".eslintrc.yml",
+            ".eslintrc.yaml"
+          )
 
-          for _, filename in pairs(files) do
-            if vim.fn.filereadable(filename) == 1 then
-              return true
-            end
+          if files() == 1 then
+            return true
           end
         end
 
