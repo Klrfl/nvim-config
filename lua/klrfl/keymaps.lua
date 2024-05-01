@@ -31,6 +31,5 @@ keymap.set("n", "tl", ":tabnext<CR>", tabopts)
 keymap.set("n", "<down>", "}")
 keymap.set("n", "<up>", "{")
 
-keymap.set("n", "<C-a>", "ggVG")
 keymap.set("n", "<C-s>", ":w<CR>")
 keymap.set("n", "<C-z>", ":lua require('notify')('Bruh did you mean to press u?', 'info')<CR>", { silent = true })
