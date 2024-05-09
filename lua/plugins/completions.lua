@@ -9,6 +9,7 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     "hrsh7th/cmp-cmdline",
+    "hrsh7th/cmp-buffer",
   },
   config = function()
     local cmp = require("cmp")
