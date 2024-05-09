@@ -28,7 +28,7 @@ return {
     event = "BufEnter",
     opts = {
       extra_keymaps = true,
-      default_delay = 5,
+      default_delay = 2,
     },
   },
   {
