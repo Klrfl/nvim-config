@@ -92,6 +92,7 @@ return {
         "typescriptreact",
         "vue",
         "astro",
+        "php",
       },
       init_options = {
         html = {
@@ -142,6 +143,7 @@ return {
       "volar",
       "gopls",
       "marksman",
+      "phpactor",
       "yamlls",
     }
 
