@@ -9,6 +9,7 @@ return {
 
       html = { "prettierd", "prettier" },
       css = { "prettierd", "prettier" },
+      scss = { "prettierd", "prettier" },
       javascript = { "prettierd", "prettier" },
       typescript = { "prettierd", "prettier" },
       vue = { "prettierd", "prettier" },
