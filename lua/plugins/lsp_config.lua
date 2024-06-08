@@ -143,7 +143,7 @@ return {
       "volar",
       "gopls",
       "marksman",
-      "phpactor",
+      "intelephense",
       "yamlls",
     }
 
