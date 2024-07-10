@@ -17,6 +17,7 @@ return {
       javascriptreact = { "prettierd", "prettier" },
       typescriptreact = { "prettierd", "prettier" },
       markdown = { "prettierd", "prettier" },
+      php = { "blade-formatter" },
     },
 
     format_on_save = {
