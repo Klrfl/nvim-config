@@ -27,8 +27,12 @@ return {
     "declancm/cinnamon.nvim",
     event = "BufEnter",
     opts = {
-      extra_keymaps = true,
-      default_delay = 2,
+      keymaps = {
+        extra = true,
+      },
+      options = {
+        delay = 2,
+      },
     },
   },
   {
