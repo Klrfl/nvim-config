@@ -23,9 +23,7 @@ return {
         "volar",
         "emmet_ls",
         "marksman",
-        "tailwindcss",
         "lua_ls",
-        "gopls",
       },
     })
 
@@ -93,6 +91,7 @@ return {
         "vue",
         "astro",
         "php",
+        "blade,",
       },
       init_options = {
         html = {
