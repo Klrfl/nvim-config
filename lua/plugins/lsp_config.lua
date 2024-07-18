@@ -19,8 +19,6 @@ return {
         "html",
         "cssls",
         "tsserver",
-        "astro",
-        "volar",
         "emmet_ls",
         "marksman",
         "lua_ls",
@@ -90,8 +88,8 @@ return {
         "typescriptreact",
         "vue",
         "astro",
+        "blade",
         "php",
-        "blade,",
       },
       init_options = {
         html = {
