@@ -1,6 +1,6 @@
 return {
   "nvimdev/lspsaga.nvim",
-  event = "BufEnter",
+  event = { "BufReadPre", "BufNewFile" },
   opts = {
     server_filetype_map = {},
     code_action = {

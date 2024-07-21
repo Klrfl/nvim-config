@@ -1,9 +1,10 @@
 return {
-  "williamboman/mason.nvim",
-  event = "BufEnter",
+  "williamboman/mason-lspconfig.nvim",
+  event = { "BufReadPre", "BufNewFile" },
+  cmd = "Mason",
   dependencies = {
     "neovim/nvim-lspconfig",
-    "williamboman/mason-lspconfig.nvim",
+    "williamboman/mason.nvim",
   },
   config = function()
     require("mason").setup({

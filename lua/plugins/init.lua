@@ -25,7 +25,7 @@ return {
   },
   {
     "declancm/cinnamon.nvim",
-    event = "BufEnter",
+    event = "VeryLazy",
     opts = {
       keymaps = {
         extra = true,

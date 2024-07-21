@@ -1,7 +1,7 @@
 return {
   -- completion and lsp stuff
   "hrsh7th/nvim-cmp",
-  event = "BufEnter",
+  event = { "BufReadPre" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     "onsails/lspkind.nvim",

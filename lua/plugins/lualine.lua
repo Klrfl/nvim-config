@@ -1,5 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
+  event = { "BufWritePre" },
   version = "*",
   opts = {
     options = {
