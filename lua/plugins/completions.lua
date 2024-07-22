@@ -1,7 +1,7 @@
 return {
   -- completion and lsp stuff
   "hrsh7th/nvim-cmp",
-  event = { "BufReadPre" },
+  event = { "BufReadPre", "BufNewFile", "CmdwinEnter" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     "onsails/lspkind.nvim",
@@ -65,13 +65,13 @@ return {
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
-        { name = "path" },
+        { name = "path",    priority = 10 },
       }),
 
       formatting = {
         format = lspkind.cmp_format({
           mode = "symbol_text",
-          maxwidth = 60, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          maxwidth = 60,         -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
           ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
         }),
       },
