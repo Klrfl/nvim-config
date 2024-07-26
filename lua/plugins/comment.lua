@@ -1,6 +1,6 @@
 return {
   "numToStr/Comment.nvim",
-  event = "BufEnter",
+  event = { "BufReadPre", "BufNewFile" },
   opts = {
     padding = true,
     sticky = false,
