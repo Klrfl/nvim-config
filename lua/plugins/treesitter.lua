@@ -13,13 +13,7 @@ return {
     ensure_installed = {
       "html",
       "css",
-      "scss",
       "javascript",
-      "typescript",
-      "vue",
-      "astro",
-      "tsx",
-      "json",
       "c",
       "lua",
       "markdown",
