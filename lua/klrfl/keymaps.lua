@@ -24,12 +24,6 @@ keymap.set("n", "<C-w><down>", ":resize -2<CR>")
 local tabopts = { silent = true }
 keymap.set("n", "te", ":tabedit<CR>", tabopts)
 keymap.set("n", "tx", ":tabclose<CR>", tabopts)
-keymap.set("n", "th", ":tabprevious<CR>", tabopts)
-keymap.set("n", "tl", ":tabnext<CR>", tabopts)
-
--- fast navigation
-keymap.set("n", "<down>", "}")
-keymap.set("n", "<up>", "{")
 
 keymap.set("n", "<C-s>", ":w<CR>")
 keymap.set("n", "<C-z>", ":lua require('notify')('Bruh did you mean to press u?', 'info')<CR>", { silent = true })
