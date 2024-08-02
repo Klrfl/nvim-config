@@ -28,10 +28,17 @@ return {
     event = "BufReadPre",
     opts = {
       keymaps = {
+        basic = true,
         extra = true,
       },
       options = {
-        delay = 2,
+        delay = 1,
+        step_size = {
+          -- Number of cursor/window lines moved per step
+          vertical = 3,
+          -- Number of cursor/window columns moved per step
+          horizontal = 2,
+        },
       },
     },
   },
