@@ -2,7 +2,7 @@ return {
   "stevearc/conform.nvim",
   event = { "BufWritePre" },
   cmd = { "ConformInfo" },
-  config = function(bufnr)
+  config = function()
     local slow_format_filetypes = {}
 
     require("conform").setup({
@@ -20,7 +20,7 @@ return {
         javascriptreact = { "prettierd", "prettier" },
         typescriptreact = { "prettierd", "prettier" },
         markdown = { "prettierd", "prettier" },
-        blade = { "blade-formatter" },
+        blade = { "prettierd", "prettier" },
       },
 
       format_on_save = function(bufnr)
