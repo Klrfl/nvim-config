@@ -20,7 +20,7 @@ return {
     -- from a post in r/neovim - thanks!
     local types = require("cmp.types")
     local function deprioritize_snippets(entry1, entry2)
-      if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
+      if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet or entry1:get_kind() == types.lsp.CompletionItemKind.Text then
         return false
       end
 
