@@ -19,7 +19,7 @@ return {
       ensure_installed = {
         "html",
         "cssls",
-        "tsserver",
+        "ts_ls",
         "emmet_ls",
         "marksman",
         "lua_ls",
@@ -121,7 +121,7 @@ return {
     -- local vue_language_server_path =
     --   "/home/efrayanglain/.nvm/versions/node/v20.10.0/lib/node_modules/@vue/typescript-plugin"
 
-    lspconfig.tsserver.setup({
+    lspconfig.ts_ls.setup({
       init_options = {
         plugins = {
           {
