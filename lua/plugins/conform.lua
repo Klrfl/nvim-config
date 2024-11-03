@@ -20,7 +20,7 @@ return {
         javascriptreact = { "prettierd", "prettier" },
         typescriptreact = { "prettierd", "prettier" },
         markdown = { "prettierd", "prettier" },
-        blade = { "prettierd", "prettier" },
+        blade = { "prettier" },
       },
 
       format_on_save = function(bufnr)
