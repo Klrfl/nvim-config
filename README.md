@@ -14,7 +14,7 @@ After using my config for a while, I decided to change my plugin manager from Pa
 
 ## Special note: Vue LS
 
-When upgrading my lS for Vue to 2.0.7 I found myself scouring over github for solutions.
+When upgrading my LS for Vue to 2.0.7 I found myself scouring over github for solutions.
 I followed these threads:
 
 - [vuejs/language-tools/issues/3925](https://github.com/vuejs/language-tools/issues/3925)
