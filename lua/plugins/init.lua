@@ -49,6 +49,19 @@ return {
     ---@type snacks.Config
     opts = {
       lazygit = { enabled = true },
+      dashboard = {
+        enabled = true,
+        preset = {
+          header = [[
+██╗  ██╗██╗     ██████╗ ███████╗██╗     
+██║ ██╔╝██║     ██╔══██╗██╔════╝██║     
+█████╔╝ ██║     ██████╔╝█████╗  ██║     
+██╔═██╗ ██║     ██╔══██╗██╔══╝  ██║     
+██║  ██╗███████╗██║  ██║██║     ███████╗
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝]],
+        },
+        headers = { "%s", align = "center" },
+      },
     },
     keys = {
       { "<leader>g", "<cmd>lua Snacks.lazygit()<CR>", desc = "Open Lazygit" },
