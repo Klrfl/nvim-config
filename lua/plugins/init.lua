@@ -24,25 +24,6 @@ return {
     config = true,
   },
   {
-    "declancm/cinnamon.nvim",
-    event = "BufReadPre",
-    opts = {
-      keymaps = {
-        basic = true,
-        extra = true,
-      },
-      options = {
-        delay = 1,
-        step_size = {
-          -- Number of cursor/window lines moved per step
-          vertical = 3,
-          -- Number of cursor/window columns moved per step
-          horizontal = 2,
-        },
-      },
-    },
-  },
-  {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
@@ -53,15 +34,16 @@ return {
         enabled = true,
         preset = {
           header = [[
-██╗  ██╗██╗     ██████╗ ███████╗██╗     
-██║ ██╔╝██║     ██╔══██╗██╔════╝██║     
-█████╔╝ ██║     ██████╔╝█████╗  ██║     
-██╔═██╗ ██║     ██╔══██╗██╔══╝  ██║     
+██╗  ██╗██╗     ██████╗ ███████╗██╗
+██║ ██╔╝██║     ██╔══██╗██╔════╝██║
+█████╔╝ ██║     ██████╔╝█████╗  ██║
+██╔═██╗ ██║     ██╔══██╗██╔══╝  ██║
 ██║  ██╗███████╗██║  ██║██║     ███████╗
 ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝]],
         },
         headers = { "%s", align = "center" },
       },
+
       explorer = { enabled = true },
       picker = {
         sources = {
