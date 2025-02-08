@@ -43,6 +43,18 @@ return {
     },
   },
   {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
+    opts = {
+      lazygit = { enabled = true },
+    },
+    keys = {
+      { "<leader>g", "<cmd>lua Snacks.lazygit()<CR>", desc = "Open Lazygit" },
+    },
+  },
+  {
     "ThePrimeagen/vim-be-good",
     cmd = "VimBeGood",
   },
