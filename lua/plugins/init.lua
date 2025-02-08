@@ -62,9 +62,18 @@ return {
         },
         headers = { "%s", align = "center" },
       },
+      explorer = { enabled = true },
+      picker = {
+        sources = {
+          explorer = {
+            layout = { layout = { position = "right" } },
+          },
+        },
+      },
     },
     keys = {
       { "<leader>g", "<cmd>lua Snacks.lazygit()<CR>", desc = "Open Lazygit" },
+      { "<leader>b", "<cmd>lua Snacks.explorer()<CR>", desc = "Open Explorer" },
     },
   },
   {
