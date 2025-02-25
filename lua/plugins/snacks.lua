@@ -41,12 +41,18 @@ return {
         explorer = {
           layout = { layout = { position = "right" } },
         },
+        source = "files",
       },
     },
   },
   keys = {
     { "<leader>g", "<cmd>lua Snacks.lazygit()<CR>", desc = "Open Lazygit" },
     { "<leader>b", "<cmd>lua Snacks.explorer()<CR>", desc = "Open Explorer" },
+    { "<leader>ff", "<cmd>lua Snacks.picker.files()<CR>", desc = "Open file picker" },
+    { "<leader>fg", "<cmd>lua Snacks.picker.grep()<CR>", desc = "Open grep picker" },
+    { "<leader>fw", "<cmd>lua Snacks.picker.grep_word()<CR>", desc = "Open grep word picker" },
+    { "<leader>fh", "<cmd>lua Snacks.picker.help()<CR>", desc = "Open help" },
+    { "<leader>fo", "<cmd>lua Snacks.picker.recent()<CR>", desc = "Open recent files" },
     { "<leader>z", "<cmd>lua Snacks.zen()<CR>", desc = "Toggle Zen mode" },
   },
 }
