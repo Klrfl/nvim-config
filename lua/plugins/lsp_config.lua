@@ -101,18 +101,6 @@ return {
       },
     })
 
-    -- only run tailwind lsp in tailwind projects
-    lspconfig.tailwindcss.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-      root_dir = require("lspconfig.util").root_pattern(
-        "tailwind.config.js",
-        "tailwind.config.cjs",
-        "tailwind.config.mjs",
-        "postcss.config.js"
-      ),
-    })
-
     -- https://github.com/vuejs/language-tools/
     local mason_registry = require("mason-registry")
     local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
@@ -144,6 +132,8 @@ return {
       "marksman",
       "intelephense",
       "yamlls",
+      "tailwindcss",
+      "svelte",
     }
 
     for _, server in pairs(servers) do
