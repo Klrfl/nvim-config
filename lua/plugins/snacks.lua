@@ -53,6 +53,7 @@ return {
     { "<leader>fw", "<cmd>lua Snacks.picker.grep_word()<CR>", desc = "Open grep word picker" },
     { "<leader>fh", "<cmd>lua Snacks.picker.help()<CR>", desc = "Open help" },
     { "<leader>fo", "<cmd>lua Snacks.picker.recent()<CR>", desc = "Open recent files" },
+    { "<leader>fs", "<cmd>lua Snacks.picker.lsp_symbols()<CR>", desc = "Pick LSP symbols" },
     { "<leader>z", "<cmd>lua Snacks.zen()<CR>", desc = "Toggle Zen mode" },
   },
 }

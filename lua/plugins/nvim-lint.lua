@@ -7,7 +7,10 @@ return {
     lint.linters_by_ft = {
       javascript = { "eslint_d" },
       typescript = { "eslint_d" },
+      typescriptreact = { "eslint_d" },
+      javascriptreact = { "eslint_d" },
       vue = { "eslint_d" },
+      svelte = { "eslint_d" },
       astro = { "eslint_d" },
     }
 
@@ -16,31 +19,7 @@ return {
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave", "TextChanged" }, {
       group = lint_augroup,
       callback = function()
-        local function checkEslintConfigFiles()
-          local files = require("lspconfig.util").root_pattern(
-            "eslint.config.js",
-            ".eslintrc.cjs",
-            ".eslintrc.json",
-            ".eslintrc.yml",
-            ".eslintrc.yaml"
-          )
-
-          if files() == 1 then
-            return true
-          end
-        end
-
-        local function readPackageJson()
-          local defaults =
-            vim.fn.matchlist(vim.fn.getline(vim.fn.search("eslintConfig", "n")), "eslintConfig\\s*\\(.*\\)$")[2]
-          if defaults ~= nil then
-            return true
-          end
-        end
-
-        if checkEslintConfigFiles() or readPackageJson() then
-          lint.try_lint()
-        end
+        lint.try_lint()
       end,
     })
   end,
