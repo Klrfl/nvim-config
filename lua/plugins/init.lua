@@ -16,6 +16,11 @@ return {
     opts = {},
   },
   {
+    "xzbdmw/colorful-menu.nvim",
+    opts = {},
+    event = "VeryLazy",
+  },
+  {
     "akinsho/git-conflict.nvim",
     event = "VeryLazy",
     version = "*",
