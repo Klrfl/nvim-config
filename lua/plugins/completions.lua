@@ -20,7 +20,6 @@ return {
 
     completion = {
       documentation = { window = { border = "single" } },
-      ghost_text = { enabled = true },
 
       -- nvim-cmp style completion menu
       menu = {
