@@ -30,14 +30,8 @@ return {
     local keymap = vim.keymap
     local lsp = vim.lsp
 
-    local hover_opts = {
-      border = "rounded",
-      max_width = 80,
-    }
-
-    -- nice border for hovering. thanks to https://www.reddit.com/r/neovim/comments/wscfar/how_to_get_bordered_ui_for_hover_actions_in/
-    lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, hover_opts)
-    lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, hover_opts)
+    -- https://www.reddit.com/r/neovim/comments/1jmsl3j/switch_to_011_now_not_showing_borders_on/
+    vim.o.winborder = "rounded"
 
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer
