@@ -15,7 +15,8 @@ return {
     keymap = { preset = "super-tab" },
     fuzzy = { implementation = "lua" },
     cmdline = {
-      completion = { menu = { auto_show = true } },
+      enabled = false,
+      --   completion = { menu = { auto_show = true } },
     },
 
     completion = {
