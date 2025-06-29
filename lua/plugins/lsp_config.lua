@@ -128,6 +128,7 @@ return {
       "yamlls",
       "tailwindcss",
       "svelte",
+      "basedpyright",
     }
 
     for _, server in pairs(servers) do
