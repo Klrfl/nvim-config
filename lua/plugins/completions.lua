@@ -3,7 +3,11 @@
 return {
   "Saghen/blink.cmp",
   version = "1.*",
-  dependencies = { "onsails/lspkind.nvim" },
+  dependencies = {
+    "onsails/lspkind.nvim",
+
+    "xzbdmw/colorful-menu.nvim",
+  },
   event = "VeryLazy",
 
   ---@module 'blink.cmp'
@@ -27,8 +31,8 @@ return {
         border = "rounded",
         draw = {
           columns = {
-            { "label", "label_description", gap = 1 },
-            { "kind_icon", gap = 1, "kind" },
+            { "label",     "label_description", gap = 1 },
+            { "kind_icon", gap = 1,             "kind" },
           },
 
           components = {
