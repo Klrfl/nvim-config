@@ -21,6 +21,9 @@ return {
         "cssls",
         "ts_ls",
         "emmet_ls",
+        "tailwindcss",
+        "astro",
+        "volar",
         "marksman",
         "lua_ls",
       },
@@ -98,8 +101,8 @@ return {
     -- https://github.com/vuejs/language-tools/
     local mason_registry = require("mason-registry")
     local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
-      -- .. "/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
-      .. "/node_modules/@vue/language-server"
+        -- .. "/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
+        .. "/node_modules/@vue/language-server"
 
     -- local vue_language_server_path =
     --   "/home/efrayanglain/.nvm/versions/node/v20.10.0/lib/node_modules/@vue/typescript-plugin"

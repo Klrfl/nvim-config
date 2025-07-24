@@ -15,12 +15,24 @@ return {
   opts = {
     sources = {
       default = { "lsp", "path", "snippets", "buffer" },
+      providers = {
+        cmdline = {
+          enabled = function()
+            -- ignores cmdline completions when executing shell commands
+            local is_not_command_mode = vim.fn.getcmdtype() ~= ":"
+            local is_shell_command = vim.fn.getcmdline():match("^[%%0-9,'<>%-]*!")
+            return is_not_command_mode or not is_shell_command
+          end,
+        },
+      },
     },
     keymap = { preset = "super-tab" },
     fuzzy = { implementation = "lua" },
     cmdline = {
-      enabled = false,
-      --   completion = { menu = { auto_show = true } },
+      keymap = {
+        ["<Tab>"] = { "show", "accept" },
+      },
+      completion = { menu = { auto_show = true } },
     },
 
     completion = {
@@ -31,8 +43,8 @@ return {
         border = "rounded",
         draw = {
           columns = {
-            { "label",     "label_description", gap = 1 },
-            { "kind_icon", gap = 1,             "kind" },
+            { "label", "label_description", gap = 1 },
+            { "kind_icon", gap = 1, "kind" },
           },
 
           components = {
