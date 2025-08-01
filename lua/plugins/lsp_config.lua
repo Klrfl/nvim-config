@@ -4,76 +4,66 @@ return {
   cmd = "Mason",
   dependencies = {
     "neovim/nvim-lspconfig",
-    "williamboman/mason.nvim",
+    {
+      "williamboman/mason.nvim",
+      opts = {
+
+        ui = {
+          border = "rounded",
+          width = 0.7,
+          height = 0.8,
+        },
+      },
+    },
   },
+
+  opts = {
+    ensure_installed = {
+      "html",
+      "cssls",
+      "vtsls",
+      "emmet_ls",
+      "tailwindcss",
+      "astro",
+      "vue_ls",
+      "marksman",
+      "lua_ls",
+    },
+  },
+
   config = function()
-    require("mason").setup({
-      ui = {
-        border = "rounded",
-        width = 0.7,
-        height = 0.8,
-      },
-    })
-
-    require("mason-lspconfig").setup({
-      ensure_installed = {
-        "html",
-        "cssls",
-        "ts_ls",
-        "emmet_ls",
-        "tailwindcss",
-        "astro",
-        "volar",
-        "marksman",
-        "lua_ls",
-      },
-    })
-
-    -- Global mappings.
-    local keymap = vim.keymap
-    local lsp = vim.lsp
-
     -- https://www.reddit.com/r/neovim/comments/1jmsl3j/switch_to_011_now_not_showing_borders_on/
     vim.o.winborder = "rounded"
 
-    -- Use LspAttach autocommand to only map the following keys
-    -- after the language server attaches to the current buffer
-    local on_attach = function(_, _)
-      local opts = { noremap = true, silent = true }
-      keymap.set("n", "gD", lsp.buf.declaration)
-      keymap.set("n", "K", lsp.buf.hover)
-      keymap.set("n", "gi", lsp.buf.implementation)
-      keymap.set("n", "gd", lsp.buf.definition)
-      keymap.set("n", "<C-k>", lsp.buf.signature_help)
-      keymap.set("n", "<space>D", lsp.buf.type_definition)
-      keymap.set("n", "gr", lsp.buf.references)
+    -- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
+    vim.api.nvim_create_autocmd("LspAttach", {
+      group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
+      callback = function(event)
+        local map = function(keys, func, desc, mode)
+          mode = mode or "n"
 
-      keymap.set("n", "[d", ":Lspsaga diagnostic_jump_next<CR>", opts)
-      keymap.set("n", "]d", ":Lspsaga diagnostic_jump_prev<CR>", opts)
-      keymap.set("n", "<F2>", ":Lspsaga rename<CR>", opts)
-      keymap.set("n", "<leader>ca", ":Lspsaga code_action<CR>", opts)
-      keymap.set("n", "<leader>o", ":Lspsaga outline<CR>", opts)
-    end
+          vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP:" .. desc })
+        end
 
-    -- Setup language servers.
-    local lspconfig = require("lspconfig")
-    local capabilities = require("blink.cmp").get_lsp_capabilities()
+        local lsp = vim.lsp
+        map("gD", lsp.buf.declaration, "go to declaration")
+        map("K", lsp.buf.hover, "hover")
+        map("gi", lsp.buf.implementation, "peek implementation")
+        map("gd", lsp.buf.definition, "go to definition")
+        map("<C-k>", lsp.buf.signature_help, "get signature help")
+        map("<space>D", lsp.buf.type_definition, "get type definition")
+        map("gr", lsp.buf.references, "references")
 
-    -- special server with special config
-    lspconfig.lua_ls.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" },
-          },
-        },
-      },
+        map("[d", ":Lspsaga diagnostic_jump_next<CR>", "go to next diagnostic")
+        map("]d", ":Lspsaga diagnostic_jump_prev<CR>", "go to previous diagnostic")
+        map("<F2>", ":Lspsaga rename<CR>", "rename symbol")
+        map("<leader>ca", ":Lspsaga code_action<CR>", "open code action")
+        map("<leader>o", ":Lspsaga outline<CR>", "open code outline")
+      end,
     })
 
-    lspconfig.emmet_ls.setup({
-      capabilities = capabilities,
+    -- special server with special config
+    vim.lsp.config("emmet_ls", {
       filetypes = {
         "html",
         "css",
