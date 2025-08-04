@@ -7,7 +7,6 @@ return {
     {
       "williamboman/mason.nvim",
       opts = {
-
         ui = {
           border = "rounded",
           width = 0.7,
@@ -115,5 +114,7 @@ return {
     vim.lsp.config("vtsls", vtsls_config)
     vim.lsp.config("vue_ls", vue_ls_config)
     vim.lsp.enable({ "vtsls", "vue_ls" })
+
+    vim.lsp.enable("astro")
   end,
 }
