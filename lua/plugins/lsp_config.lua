@@ -21,12 +21,13 @@ return {
       "html",
       "cssls",
       "vtsls",
-      "emmet_ls",
+      "emmet_language_server",
       "tailwindcss",
       "astro",
       "vue_ls",
       "marksman",
       "lua_ls",
+      "basedpyright",
     },
   },
 
@@ -62,7 +63,7 @@ return {
     })
 
     -- special server with special config
-    vim.lsp.config("emmet_ls", {
+    vim.lsp.config("emmet_language_server", {
       filetypes = {
         "html",
         "css",
@@ -116,5 +117,8 @@ return {
     vim.lsp.enable({ "vtsls", "vue_ls" })
 
     vim.lsp.enable("astro")
+    vim.lsp.enable("intelephense")
+    vim.lsp.enable("clangd")
+    vim.lsp.enable("tailwindcss")
   end,
 }
