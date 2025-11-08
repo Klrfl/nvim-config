@@ -116,6 +116,7 @@ return {
     vim.lsp.config("vue_ls", vue_ls_config)
     vim.lsp.enable({ "vtsls", "vue_ls" })
 
+    vim.lsp.enable("emmet_language_server")
     vim.lsp.enable("astro")
     vim.lsp.enable("intelephense")
     vim.lsp.enable("clangd")

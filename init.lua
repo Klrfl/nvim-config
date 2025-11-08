@@ -24,4 +24,11 @@ if not vim.g.vscode then
   })
 
   vim.notify = require("notify")
+
+  -- add custom filetypes here
+  vim.filetype.add({
+    extension = {
+      ejs = "html",
+    },
+  })
 end
