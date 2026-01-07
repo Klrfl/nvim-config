@@ -62,33 +62,7 @@ return {
       end,
     })
 
-    -- special server with special config
-    vim.lsp.config("emmet_language_server", {
-      filetypes = {
-        "html",
-        "css",
-        "sass",
-        "scss",
-        "javascript",
-        "typescript",
-        "javascriptreact",
-        "typescriptreact",
-        "vue",
-        "astro",
-        "blade",
-        "php",
-      },
-      init_options = {
-        html = {
-          options = {
-            -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-            ["bem.enabled"] = true,
-          },
-        },
-      },
-    })
-
-    -- https://github.com/vuejs/language-tools/
+    -- https://github.com/vuejs/language-tools/wiki/Neovim
     local vue_language_server_path = vim.fn.expand("$MASON/packages")
       .. "/vue-language-server"
       .. "/node_modules/@vue/language-server"
@@ -116,10 +90,14 @@ return {
     vim.lsp.config("vue_ls", vue_ls_config)
     vim.lsp.enable({ "vtsls", "vue_ls" })
 
-    vim.lsp.enable("emmet_language_server")
-    vim.lsp.enable("astro")
+    vim.lsp.enable({
+      "emmet_language_server",
+      "svelte",
+      "astro",
+      "tailwindcss",
+    })
+
     vim.lsp.enable("intelephense")
     vim.lsp.enable("clangd")
-    vim.lsp.enable("tailwindcss")
   end,
 }
