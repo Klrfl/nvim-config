@@ -1,9 +1,6 @@
 return {
-  "williamboman/mason-lspconfig.nvim",
-  event = { "BufReadPre", "BufNewFile" },
-  cmd = "Mason",
+  "neovim/nvim-lspconfig",
   dependencies = {
-    "neovim/nvim-lspconfig",
     {
       "williamboman/mason.nvim",
       opts = {
@@ -16,25 +13,7 @@ return {
     },
   },
 
-  opts = {
-    ensure_installed = {
-      "vtsls",
-      "vue_ls",
-
-      "html",
-      "cssls",
-      "emmet_language_server",
-      "svelte",
-      "astro",
-      "tailwindcss",
-      "intelephense",
-
-      "lua_ls",
-      "marksman",
-      "clang",
-      "basedpyright",
-    },
-  },
+  opts = {},
 
   config = function()
     -- https://www.reddit.com/r/neovim/comments/1jmsl3j/switch_to_011_now_not_showing_borders_on/
@@ -106,6 +85,32 @@ return {
       "astro",
       "tailwindcss",
     })
+
+    -- https://github.com/neovim/neovim/issues/21686
+    vim.lsp.config("lua_ls", {
+      settings = {
+        Lua = {
+          runtime = {
+            -- Tell the language server which version of Lua you're using
+            -- (most likely LuaJIT in the case of Neovim)
+            version = "LuaJIT",
+          },
+          diagnostics = {
+            -- Get the language server to recognize the `vim` global
+            globals = {
+              "vim",
+              "require",
+            },
+          },
+          workspace = {
+            -- Make the server aware of Neovim runtime files
+            library = vim.api.nvim_get_runtime_file("", true),
+          },
+        },
+      },
+    })
+
+    vim.lsp.enable("lua_ls")
 
     -- others
     vim.lsp.enable({
