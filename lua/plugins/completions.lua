@@ -5,7 +5,6 @@ return {
   version = "1.*",
   dependencies = {
     "onsails/lspkind.nvim",
-
     "xzbdmw/colorful-menu.nvim",
   },
   event = "VeryLazy",
@@ -14,7 +13,7 @@ return {
   ---@type blink.cmp.Config
   opts = {
     sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
+      default = { "lsp", "path", "snippets" },
       providers = {
         cmdline = {
           enabled = function()

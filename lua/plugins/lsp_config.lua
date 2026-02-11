@@ -18,15 +18,20 @@ return {
 
   opts = {
     ensure_installed = {
+      "vtsls",
+      "vue_ls",
+
       "html",
       "cssls",
-      "vtsls",
       "emmet_language_server",
-      "tailwindcss",
+      "svelte",
       "astro",
-      "vue_ls",
-      "marksman",
+      "tailwindcss",
+      "intelephense",
+
       "lua_ls",
+      "marksman",
+      "clang",
       "basedpyright",
     },
   },
@@ -86,18 +91,28 @@ return {
       filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" },
     }
 
+    -- ts
     vim.lsp.config("vtsls", vtsls_config)
     vim.lsp.config("vue_ls", vue_ls_config)
     vim.lsp.enable({ "vtsls", "vue_ls" })
 
+    -- web stuff
     vim.lsp.enable({
+      "html",
+      "cssls",
       "emmet_language_server",
+      "intelephense",
       "svelte",
       "astro",
       "tailwindcss",
     })
 
-    vim.lsp.enable("intelephense")
-    vim.lsp.enable("clangd")
+    -- others
+    vim.lsp.enable({
+      "lua_ls",
+      "marksman",
+      "clangd",
+      "basedpyright",
+    })
   end,
 }
