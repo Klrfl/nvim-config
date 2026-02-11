@@ -11,8 +11,8 @@ keymap.set("n", "_", "<C-x>")
 keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 
 -- split windows
-keymap.set("n", "ss", ":split<CR><C-w>w", { silent = true })
-keymap.set("n", "sv", ":vsplit<CR><C-w>w", { silent = true })
+keymap.set("n", "ss", ":split<CR>", { silent = true })
+keymap.set("n", "sv", ":vsplit<CR>", { silent = true })
 
 -- resize window
 keymap.set("n", "<C-w><left>", ":vertical resize -2<CR>")
@@ -27,3 +27,9 @@ keymap.set("n", "tx", ":tabclose<CR>", tabopts)
 
 keymap.set("n", "<C-s>", ":w<CR>")
 keymap.set("n", "<C-z>", ":lua require('notify')('Bruh did you mean to press u?', 'info')<CR>", { silent = true })
+
+-- Better paste behavior
+vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without yanking" })
+
+-- Delete without yanking
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })

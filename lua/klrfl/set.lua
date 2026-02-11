@@ -11,6 +11,8 @@ opt.relativenumber = true
 
 opt.ignorecase = true
 opt.smartcase = true
+opt.hlsearch = true
+opt.incsearch = true
 
 opt.colorcolumn = "80"
 opt.termguicolors = true
@@ -22,7 +24,7 @@ opt.autowrite = true
 opt.cursorline = true
 opt.autoread = true
 
-vim.opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamedplus"
 
 opt.wrap = false
 
@@ -34,3 +36,9 @@ opt.smarttab = true
 opt.autoindent = true
 opt.smartindent = true
 opt.expandtab = true
+
+opt.swapfile = false
+opt.splitright = true
+opt.splitbelow = true
+
+opt.spell = true
