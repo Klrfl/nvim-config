@@ -28,6 +28,6 @@ return {
         },
       },
     },
-    extensions = { "nvim-tree", "toggleterm" },
+    extensions = { "nvim-tree" },
   },
 } -- status line
