@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = "VeryLazy",
+  lazy = false,
   cmd = {
     "TSInstall",
     "TSBufEnable",
@@ -39,4 +39,36 @@ return {
       enable = true,
     },
   },
+  config = function()
+    local filetypes_i_work_on = {
+      "lua",
+      "json",
+      "markdown",
+      "c",
+      "cpp",
+
+      "html",
+      "css",
+      "scss",
+
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+
+      "vue",
+      "svelte",
+      "astro",
+      "python",
+      "blade",
+      "php",
+    }
+
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = filetypes_i_work_on,
+      callback = function()
+        vim.treesitter.start()
+      end,
+    })
+  end,
 }

@@ -11,3 +11,6 @@ After using my config for a while, I decided to change my plugin manager from Pa
 - GCC
 - Node + NPM to install the LSPs
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+- tree-sitter-cli for nvim-treesitter
+
+last updated: Tue, 17 Feb 2026
