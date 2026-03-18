@@ -44,6 +44,9 @@ return {
       "lua",
       "json",
       "markdown",
+      "bash",
+      "sql",
+
       "c",
       "cpp",
 
