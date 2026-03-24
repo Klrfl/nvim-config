@@ -16,6 +16,13 @@ return {
     opts = {},
   },
   {
+    "folke/zen-mode.nvim",
+    opts = {},
+    keys = {
+      { "<leader>z", ":ZenMode<CR>", desc = "toggle zen mode" },
+    },
+  },
+  {
     "akinsho/git-conflict.nvim",
     event = "VeryLazy",
     version = "*",
